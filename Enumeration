@@ -1,0 +1,18 @@
+void all_prime_factors(set<int>&s,vector<int>&nums)
+{
+        int size=nums.size();
+        for(int i=0;i<size;i++)
+        {
+                int num=nums[i];
+                int factor=2;
+                while(factor*factor<=num)
+                {
+                      if(num%factor==0)
+                      {
+                              s.insert(factor);
+                              while(n%factor==0)n/=factor;
+                      }
+                }
+                if(num!=1)s.insert(num);
+        }
+}
