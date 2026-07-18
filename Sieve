@@ -1,0 +1,10 @@
+void sieve(vector<int>&nums)
+{
+        int size=nums.size();
+        //0 for prime and 1 for non prime
+        for(int i=2;i<size;i++)
+        {
+                if(nums[i]==0)
+                for(int j=i*i;j<size;j+=i)nums[j]=1;
+        }
+}
