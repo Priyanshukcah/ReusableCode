@@ -1,0 +1,13 @@
+int maxProfit(vector<int>& prices) {
+        int buy_prev=0,sell_prev=0;
+        int present_buy=0,present_sell;
+        int size=prices.size();
+        for(int i=size-1;i>=0;i--)
+        {
+            present_buy=max(buy_prev,-prices[i]+sell_prev);
+            present_sell=max(sell_prev,+prices[i]+buy_prev);
+            buy_prev=present_buy;
+            sell_prev=present_sell;
+        }
+        return present_buy;
+    }
