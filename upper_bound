@@ -1,4 +1,4 @@
-int (int val, vector<int>&nums)
+int upper_bound(int val, vector<int>&nums)
 {
     int size=nums.size();
     if(size==0)return -1;
