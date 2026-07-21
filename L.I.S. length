@@ -1,0 +1,16 @@
+  int lengthOfLIS(vector<int>& nums) {
+        vector<int>rough_lis;
+        // rough largest increasing subsequence as it contains impression of many largest increasing subsequence
+        rough_lis.push_back(nums[0]);
+        int size=nums.size();
+        for(int i=1;i<size;i++)
+        {
+            if(nums[i]>rough_lis.back())rough_lis.push_back(nums[i]);
+            else
+            {
+                int pos=upper_bound(nums[i],rough_lis);
+                rough_lis[pos]=nums[i];
+            }
+        }
+        return rough_lis.size();
+    }
