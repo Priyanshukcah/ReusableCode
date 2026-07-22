@@ -1,0 +1,19 @@
+bool is_inserted(string small,string big)
+    {
+        int big_size=big.size();
+        int small_size=small.size();
+        if(!(big_size=1+small_size))return false;
+        int mismatch=0;
+        imt l1=0,l2=0;
+        while(l1<small_size&&l2<big_size)
+        {
+            if(small[l1]!=big[l2])l2++,mismatch++;
+            else
+            {
+                l1++;
+                l2++;
+            }
+            if(mismatch>1)return false;
+        }
+            return true;
+    }
